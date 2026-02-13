@@ -2,7 +2,7 @@ from __future__ import annotations
 import os
 from typing import Set
 
-ALLOWED_TIMEFRAMES: Set[str] = {"5m", "15m", "1h", "4h", "1D", "1W", "1M"}
+ALLOWED_TIMEFRAMES: Set[str] = {"5m", "15m", "1h", "4h", "1D", "1W", "1M", "3M", "6M", "12M"}
 EXCHANGE_SCREENER = {
     # "all": "crypto",
     # "huobi": "crypto",

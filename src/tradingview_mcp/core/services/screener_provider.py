@@ -136,6 +136,9 @@ def fetch_screener_multi_changes(
             '1D': '1D',
             '1W': '1W',
             '1M': '1M',
+            "3M": "3M",
+            "6M": "6M",
+            "12M": "12M",
         }
         return mapping.get(tf or '')
 

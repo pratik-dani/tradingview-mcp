@@ -73,8 +73,7 @@ def _percent_change(o: Optional[float], c: Optional[float]) -> Optional[float]:
 def _tf_to_tv_resolution(tf: Optional[str]) -> Optional[str]:
 	if not tf:
 		return None
-	return {"5m": "5", "15m": "15", "1h": "60", "4h": "240", "1D": "1D", "1W": "1W", "1M": "1M"}.get(tf)
-
+	return {"5m": "5", "15m": "15", "1h": "60", "4h": "240", "1D": "1D", "1W": "1W", "3M": "3M", "6M": "6M", "12M": "12M", "1M": "1M"}.get(tf)
 
 def _fetch_bollinger_analysis(exchange: str, timeframe: str = "4h", limit: int = 50, bbw_filter: float = None) -> List[Row]:
     """Fetch analysis using tradingview_ta with bollinger band logic from the original screener."""
@@ -277,7 +276,7 @@ def top_gainers(exchange: str = "KUCOIN", timeframe: str = "15m", limit: int = 2
     
     Args:
         exchange: Exchange name like KUCOIN, BINANCE, BYBIT, etc.
-        timeframe: One of 5m, 15m, 1h, 4h, 1D, 1W, 1M
+        timeframe: One of 5m, 15m, 1h, 4h, 1D, 1W, 1M, '3M', '6M', '12M'
         limit: Number of rows to return (max 50)
     """
     exchange = sanitize_exchange(exchange, "KUCOIN")
@@ -318,7 +317,8 @@ def bollinger_scan(exchange: str = "KUCOIN", timeframe: str = "4h", bbw_threshol
     
     Args:
         exchange: Exchange name like KUCOIN, BINANCE, BYBIT, etc.
-        timeframe: One of 5m, 15m, 1h, 4h, 1D, 1W, 1M  
+        timeframe: One of 5m, 15m, 1h, 4h, 1D, 1W, 1M, '3M', '6M', '12M'
+ 
         bbw_threshold: Maximum BBW value to filter (default 0.04)
         limit: Number of rows to return (max 100)
     """
@@ -341,7 +341,7 @@ def rating_filter(exchange: str = "KUCOIN", timeframe: str = "5m", rating: int =
     
     Args:
         exchange: Exchange name like KUCOIN, BINANCE, BYBIT, etc.
-        timeframe: One of 5m, 15m, 1h, 4h, 1D, 1W, 1M
+        timeframe: One of 5m, 15m, 1h, 4h, 1D, 1W, 1M, '3M', '6M', '12M'
         rating: BB rating (-3 to +3): -3=Strong Sell, -2=Sell, -1=Weak Sell, 1=Weak Buy, 2=Buy, 3=Strong Buy
         limit: Number of rows to return (max 50)
     """
@@ -369,7 +369,7 @@ def coin_analysis(
     Args:
         symbol: Coin symbol (e.g., "ACEUSDT", "BTCUSDT")
         exchange: Exchange name (BINANCE, KUCOIN, etc.) 
-        timeframe: Time interval (5m, 15m, 1h, 4h, 1D, 1W, 1M)
+        timeframe: Time interval (5m, 15m, 1h, 4h, 1D, 1W, 1M, '3M', '6M', '12M')
     
     Returns:
         Detailed coin analysis with all indicators and metrics
@@ -999,7 +999,7 @@ def volume_breakout_scanner(exchange: str = "KUCOIN", timeframe: str = "15m", vo
 	
 	Args:
 		exchange: Exchange name like KUCOIN, BINANCE, BYBIT, etc.
-		timeframe: One of 5m, 15m, 1h, 4h, 1D, 1W, 1M
+		timeframe: One of 5m, 15m, 1h, 4h, 1D, 1W, 1M, '3M', '6M', '12M'
 		volume_multiplier: How many times the volume should be above normal level (default 2.0)
 		price_change_min: Minimum price change percentage (default 3.0)
 		limit: Number of rows to return (max 50)

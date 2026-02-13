@@ -16,6 +16,9 @@ def _tf_to_tv_resolution(tf: Optional[str]) -> Optional[str]:
         '1D': '1D',
         '1W': '1W',
         '1M': '1M',
+        '3M': '3M',
+        '6M': '6M',
+        '12M': '12M',
     }
     return m.get(tf)
 
@@ -37,7 +40,7 @@ def fetch_screener_indicators(
       exchange: e.g. 'kucoin' or 'binance'. Case-insensitive.
       symbols: list of 'EXCHANGE:SYMBOL' tickers. If empty/None, scans by exchange.
       limit: optional limit of rows to return.
-      timeframe: optional timeframe like '5m', '15m', '1h', '4h', '1D', '1W', '1M'.
+      timeframe: optional timeframe like '5m', '15m', '1h', '4h', '1D', '1W', '1M', '3M', '6M', '12M'.
       cookies: optional requests cookies for live data.
 
     Returns: List[{ 'symbol': 'EXCHANGE:PAIR', 'indicators': {...} }]

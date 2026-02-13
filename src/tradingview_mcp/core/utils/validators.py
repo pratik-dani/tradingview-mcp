@@ -4,29 +4,31 @@ from typing import Set
 
 ALLOWED_TIMEFRAMES: Set[str] = {"5m", "15m", "1h", "4h", "1D", "1W", "1M"}
 EXCHANGE_SCREENER = {
-    "all": "crypto",
-    "huobi": "crypto",
-    "kucoin": "crypto",
-    "coinbase": "crypto",
-    "gateio": "crypto",
-    "binance": "crypto",
-    "bitfinex": "crypto",
-    "bitget": "crypto",
-    "bybit": "crypto",
-    "okx": "crypto",
-    "bist": "turkey",
+    # "all": "crypto",
+    # "huobi": "crypto",
+    # "kucoin": "crypto",
+    # "coinbase": "crypto",
+    # "gateio": "crypto",
+    # "binance": "crypto",
+    # "bitfinex": "crypto",
+    # "bitget": "crypto",
+    # "bybit": "crypto",
+    # "okx": "crypto",
+    # "bist": "turkey",
     "nasdaq": "america",
     # Malaysia Stock Market Support
-    "bursa": "malaysia",
-    "myx": "malaysia",
-    "klse": "malaysia",
-    "ace": "malaysia",      # ACE Market (Access, Certainty, Efficiency)
-    "leap": "malaysia",     # LEAP Market (Leading Entrepreneur Accelerator Platform)
+    # "bursa": "malaysia",
+    # "myx": "malaysia",
+    # "klse": "malaysia",
+    # "ace": "malaysia",      # ACE Market (Access, Certainty, Efficiency)
+    # "leap": "malaysia",     # LEAP Market (Leading Entrepreneur Accelerator Platform)
     # Hong Kong Stock Market Support
-    "hkex": "hongkong",     # Hong Kong Exchange
-    "hk": "hongkong",       # Hong Kong (alternate)
-    "hsi": "hongkong",      # Hang Seng Index constituents
+    # "hkex": "hongkong",     # Hong Kong Exchange
+    # "hk": "hongkong",       # Hong Kong (alternate)
+    # "hsi": "hongkong",      # Hang Seng Index constituents
     "nyse": "america",
+    "nse": "india",
+    "bse": "india"
 }
 
 # Get absolute path to coinlist directory relative to this module
